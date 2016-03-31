@@ -43,6 +43,7 @@ AUTOPKG_PKG=$(get_autopkg)
 installer -pkg "${AUTOPKG_PKG}" -tgt /
 
 AUTOPKG="/usr/local/bin/autopkg"
+"${AUTOPKG}" repo-add recipes
 "${AUTOPKG}" repo-add grahamgilbert-recipes
 "${AUTOPKG}" run Dropbox.install
 
