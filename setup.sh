@@ -11,6 +11,8 @@ if [[ $WHOAMI != "root" ]]; then
     exit 1
 fi
 
+loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
+
 # Install the xcode tools (stolen from https://github.com/timsutton/osx-vm-templates/blob/master/scripts/xcode-cli-tools.sh)
 touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 # find the CLI Tools update
@@ -52,6 +54,9 @@ rm -rf "${AUTOPKG_DIR}" "~/Library/AutoPkg"
 
 git clone https://github.com/grahamgilbert/setup_script.git /tmp/setup_script
 
-open /tmp/setup_script
+echo "---------------------------------------------------------"
+echo "Now open Dropbox and begin syncing"
 
-echo "Now open Dropbox and begin syncing and run install.sh as your regular user"
+su loggedInUser -C /tmp/setup_script/install.sh
+
+/tmp/setup_script/puppet.sh
