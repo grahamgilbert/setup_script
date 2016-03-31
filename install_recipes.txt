@@ -5,7 +5,6 @@ outset.install
 Alfred2.install
 osquery.install
 Caffeine.install
-Cyberduck.install
 dockutil.install
 Evernote.install
 Fluid.install
