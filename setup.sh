@@ -26,7 +26,21 @@ AUTOPKG="$AUTOPKG_DIR/Code/autopkg"
 
 # Use the git clone to install the current release of autopkg
 "${AUTOPKG}" repo-add rtrouton-recipes
-"${AUTOPKG}" run AutoPkg-Release.install
+
+get_autopkg() {
+    local recipe_name="Autopkg-Release.download"
+    local report_path=$(mktemp /tmp/autopkg-report-XXXX)
+
+    # Run AutoPkg setting VERSION, and saving the results as a plist
+    "${AUTOPKG}" run --report-plist "${report_path}" "${recipe_name}" > \
+        "$(mktemp "/tmp/autopkg-runlog-${recipe_name}")"
+    /usr/libexec/PlistBuddy -c \
+        'Print :summary_results:url_downloader_summary_result:data_rows:0:download_path' \
+        "${report_path}"
+}
+
+AUTOPKG_PKG=$(get_autopkg)
+installer -pkg "${AUTOPKG_PKG}" -tgt /
 
 AUTOPKG="/usr/local/bin/autopkg"
 "${AUTOPKG}" repo-add grahamgilbert-recipes
