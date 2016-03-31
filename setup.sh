@@ -47,7 +47,7 @@ AUTOPKG="/usr/local/bin/autopkg"
 "${AUTOPKG}" run Dropbox.install
 
 # Cleanup
-rm -rf "{$AUTOPKG_DIR}" "~/Library/AutoPkg"
+rm -rf "${AUTOPKG_DIR}" "~/Library/AutoPkg"
 
 git clone https://github.com/grahamgilbert/setup_script.git /tmp/setup_script
 
