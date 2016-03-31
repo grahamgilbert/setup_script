@@ -13,8 +13,8 @@ mod 'mac_profiles_handler',
 mod 'mac_facts',
     :git => 'https://github.com/grahamgilbert/grahamgilbert-mac_facts.git'
 
-mod 'repository',
-    :git => 'https://github.com/boxen/puppet-repository'
+# mod 'repository',
+#     :git => 'https://github.com/boxen/puppet-repository'
 
 mod 'outset',
     :git => 'https://github.com/grahamgilbert/puppet-outset'
