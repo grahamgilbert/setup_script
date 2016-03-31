@@ -25,7 +25,6 @@ Firefox.install
 GitHubDesktop.install
 Go.install
 GoogleChrome.install
-GoogleDrive.install
 GoogleVoiceAndVideo.install
 GrandPerspective.install
 Handbrake.install
