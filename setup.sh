@@ -28,7 +28,7 @@ AUTOPKG="$AUTOPKG_DIR/Code/autopkg"
 "${AUTOPKG}" repo-add rtrouton-recipes
 "${AUTOPKG}" run AutoPkg-Release.install
 
-AUTOPKG="/usr/local/bin"
+AUTOPKG="/usr/local/bin/autopkg"
 "${AUTOPKG}" repo-add grahamgilbert-recipes
 "${AUTOPKG}" run Dropbox.install
 
