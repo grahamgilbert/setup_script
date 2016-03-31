@@ -1,4 +1,5 @@
 1Password.install
+Autopkg-Release.install
 outset.install
 Alfred2.install
 osquery.install
