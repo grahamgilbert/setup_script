@@ -26,7 +26,7 @@ ${AUTOPKG} run -l install_recipes.txt
 ${AUTOPKG} run -k OS_VERSION="10.11" Puppet-Agent.install
 
 # Install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
 
 # Install the mas binary from homebrew
 /usr/local/bin/brew tap argon/mas
