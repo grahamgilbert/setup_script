@@ -3,8 +3,8 @@
 # This script uses autopkg to install most of the software needed (apart from homebrew stuff)
 
 # Ask for MAS creds
-read -p "App Store Username:" appstoreusername
-read -s -p "App Store Password:" appstorepassword
+# read -p "App Store Username:" appstoreusername
+# read -s -p "App Store Password:" appstorepassword
 
 AUTOPKG=/usr/local/bin/autopkg
 
