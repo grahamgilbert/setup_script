@@ -11,3 +11,4 @@ autopkg/jleggat-recipes
 autopkg/cgerke-recipes
 autopkg/hansen-m-recipes
 autopkg/valdore86-recipes
+autopkg/timsutton-recipes
