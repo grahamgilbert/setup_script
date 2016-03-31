@@ -1,4 +1,5 @@
 1Password.install
+Dropbox.install
 Autopkg-Release.install
 outset.install
 Alfred2.install
@@ -21,7 +22,6 @@ Atom.install
 AppCleaner.install
 AutoDMG.install
 CreateUserPkg.install
-Dropbox.install
 Firefox.install
 GitHubDesktop.install
 Go.install
