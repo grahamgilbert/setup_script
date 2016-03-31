@@ -31,46 +31,52 @@ ${AUTOPKG} run -k OS_VERSION="10.11" Puppet-Agent.install
 
 /usr/local/bin/brew install mas
 
-MAS=/usr/local/bin/mas
+get_mas() {
+    local app_id=$1
+    local app_path=$2
 
-$MAS signin $appstoreusername "${appstorepassword}"
+    [ ! -d "${app_path}"  ] && /usr/local/bin/mas install $app_id
+}
 
-$MAS install 927292435
 
-$MAS install 961850017
+/usr/local/bin/mas signin $appstoreusername "${appstorepassword}"
 
-$MAS install 409183694
+get_mas 927292435 "/Applications/iStat Mini.app"
 
-$MAS install 409907375
+get_mas 961850017 "/Applications/GIFs.app"
 
-$MAS install 403304796
+get_mas 409183694 "/Applications/Keynote.app"
 
-$MAS install 413857545
+get_mas 409907375 "/Applications/Apple Remote Desktop.app"
 
-$MAS install 494803304
+get_mas 403304796 "/Applications/iNet Network Scanner.app"
 
-$MAS install 407963104
+get_mas 413857545 "/Applications/Divvy.app"
 
-$MAS install 425955336
+get_mas 494803304 "/Applications/WiFi Explorer.app"
 
-$MAS install 557168941
+get_mas 407963104 "/Applications/Pixelmator.app"
 
-$MAS install 880001334
+get_mas 425955336 "/Applications/Skitch.app"
 
-$MAS install 497799835
+get_mas 557168941 "/Applications/Tweetbot.app"
 
-$MAS install 847496013
+get_mas 880001334 "/Applications/Reeder.app"
 
-$MAS install 409201541
+get_mas 497799835 "/Applications/Xcode.app"
 
-$MAS install 715768417
+get_mas 847496013 "/Applications/Deckset.app"
 
-$MAS install 504544917
+get_mas 409201541 "/Applications/Pages.app"
 
-$MAS install 420212497
+get_mas 715768417 "/Applications/Microsoft Remote Desktop.app"
 
-$MAS install 568494494
+get_mas 504544917 "/Applications/Clear.app"
 
-$MAS install 458034879
+get_mas 420212497 "/Applications/Byword.app"
+
+get_mas 568494494 "/Applications/Pocket.app"
+
+get_mas 458034879 "/Applications/Dash.app"
 
 echo "Now run puppet.sh as root"
