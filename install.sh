@@ -6,6 +6,8 @@
 # read -p "App Store Username:" appstoreusername
 # read -s -p "App Store Password:" appstorepassword
 
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null
+
 AUTOPKG=/usr/local/bin/autopkg
 
 # Add the needed recipes
@@ -39,7 +41,7 @@ get_mas() {
 }
 
 
-/usr/local/bin/mas signin $appstoreusername "${appstorepassword}"
+# /usr/local/bin/mas signin $appstoreusername "${appstorepassword}"
 
 get_mas 927292435 "/Applications/iStat Mini.app"
 
