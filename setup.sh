@@ -57,6 +57,6 @@ git clone https://github.com/grahamgilbert/setup_script.git /tmp/setup_script
 echo "---------------------------------------------------------"
 echo "Now open Dropbox and begin syncing"
 
-su loggedInUser -C /tmp/setup_script/install.sh
+su ${loggedInUser} -C /tmp/setup_script/install.sh
 
 /tmp/setup_script/puppet.sh
