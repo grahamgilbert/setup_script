@@ -9,9 +9,10 @@ echo "Please enter your password to install Homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
 
 AUTOPKG=/usr/local/bin/autopkg
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Add the needed recipes
-repo_list=install_repos.txt
+repo_list=${DIR}/install_repos.txt
 while IFS= read -r line
 do
     ${AUTOPKG} repo-add $line
@@ -19,7 +20,7 @@ done < $repo_list
 
 # Install the apps that have no changes from default
 
-${AUTOPKG} run -l install_recipes.txt
+${AUTOPKG} run -l ${DIR}/install_recipes.txt
 
 # Those awkward ones that need 'special help'
 
