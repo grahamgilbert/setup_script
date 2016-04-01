@@ -36,6 +36,7 @@ get_mas() {
     local app_id=$1
     local app_path=$2
     echo "Installing ${app_path}"
+    sleep 5
     [ ! -d "${app_path}"  ] && /usr/local/bin/mas install $app_id
     [ -d "${app_path}"  ] && echo "${app_path} is already installed."
 }
@@ -45,7 +46,7 @@ get_mas() {
 
 get_mas 927292435 "/Applications/iStat Mini.app"
 
-get_mas 961850017 "/Applications/GIFs.app"
+# get_mas 961850017 "/Applications/GIFs.app"
 
 get_mas 409183694 "/Applications/Keynote.app"
 
