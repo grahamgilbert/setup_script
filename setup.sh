@@ -11,6 +11,10 @@ if [[ $WHOAMI != "root" ]]; then
     exit 1
 fi
 
+# Ask for MAS creds
+read -p "App Store Username:" appstoreusername
+read -s -p "App Store Password:" appstorepassword
+
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
 # Install the xcode tools (stolen from https://github.com/timsutton/osx-vm-templates/blob/master/scripts/xcode-cli-tools.sh)
@@ -57,6 +61,6 @@ git clone https://github.com/grahamgilbert/setup_script.git /tmp/setup_script
 echo "---------------------------------------------------------"
 echo "Now open Dropbox and begin syncing"
 
-su ${loggedInUser} -C /tmp/setup_script/install.sh
+su ${loggedInUser} -C /tmp/setup_script/install.sh ${appstoreusername} ${appstorepassword}
 
 /tmp/setup_script/puppet.sh

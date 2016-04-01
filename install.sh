@@ -2,11 +2,10 @@
 
 # This script uses autopkg to install most of the software needed (apart from homebrew stuff)
 
-# Ask for MAS creds
-read -p "App Store Username:" appstoreusername
-read -s -p "App Store Password:" appstorepassword
-
+appstoreusername=$1
+appstorepassword=$2
 # Install homebrew
+echo "Please enter your password to install Homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
 
 AUTOPKG=/usr/local/bin/autopkg
