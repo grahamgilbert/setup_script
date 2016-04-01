@@ -35,8 +35,9 @@ ${AUTOPKG} run -k OS_VERSION="10.11" Puppet-Agent.install
 get_mas() {
     local app_id=$1
     local app_path=$2
-
+    echo "Installing ${app_path}"
     [ ! -d "${app_path}"  ] && /usr/local/bin/mas install $app_id
+    [ -d "${app_path}"  ] && echo "${app_path} is already installed."
 }
 
 
@@ -48,7 +49,7 @@ get_mas 961850017 "/Applications/GIFs.app"
 
 get_mas 409183694 "/Applications/Keynote.app"
 
-get_mas 409907375 "/Applications/Apple Remote Desktop.app"
+get_mas 409907375 "/Applications/Remote Desktop.app"
 
 get_mas 403304796 "/Applications/iNet Network Scanner.app"
 
