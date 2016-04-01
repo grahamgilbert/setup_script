@@ -11,9 +11,15 @@ if [[ $WHOAMI != "root" ]]; then
     exit 1
 fi
 
-# Ask for MAS creds
-read -p "App Store Username:" appstoreusername
-read -s -p "App Store Password:" appstorepassword
+if [[ $1 -eq 0 ]]; then
+    echo "App Store Username must be the first positional argumenr"
+    exit 1
+fi
+
+if [[ $2 -eq 0 ]]; then
+    echo "App Store Password must be the second positional argumenr"
+    exit 1
+fi
 
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
 
@@ -62,7 +68,7 @@ git clone https://github.com/grahamgilbert/setup_script.git /tmp/setup_script
 echo "---------------------------------------------------------"
 echo "Now open Dropbox and begin syncing"
 
-. su ${loggedInUser} -C /tmp/setup_script/install.sh
+su ${loggedInUser} -C /tmp/setup_script/install.sh $1 $2
 
 /tmp/setup_script/puppet.sh
 rm -rf /tmp/setup_script
