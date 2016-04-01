@@ -11,13 +11,8 @@ if [[ $WHOAMI != "root" ]]; then
     exit 1
 fi
 
-if [[ $1 -eq 0 ]]; then
-    echo "App Store Username must be the first positional argumenr"
-    exit 1
-fi
-
-if [[ $2 -eq 0 ]]; then
-    echo "App Store Password must be the second positional argumenr"
+if [[ $# -eq 0 ]]; then
+    echo "App Store Username and password must be passed"
     exit 1
 fi
 
