@@ -64,3 +64,4 @@ echo "Now open Dropbox and begin syncing"
 su ${loggedInUser} -C /tmp/setup_script/install.sh ${appstoreusername} ${appstorepassword}
 
 /tmp/setup_script/puppet.sh
+rm -rf /tmp/setup_script
