@@ -43,6 +43,7 @@ get_autopkg() {
     /usr/libexec/PlistBuddy -c \
         'Print :summary_results:url_downloader_summary_result:data_rows:0:download_path' \
         "${report_path}"
+    rm -f report_path
 }
 
 AUTOPKG_PKG=$(get_autopkg)
