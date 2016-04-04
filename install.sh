@@ -5,8 +5,8 @@
 appstoreusername=$1
 appstorepassword=$2
 # Install homebrew
-echo "Please enter your password to install Homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
+# echo "Please enter your password to install Homebrew"
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
 
 AUTOPKG=/usr/local/bin/autopkg
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -28,9 +28,9 @@ ${AUTOPKG} run -k OS_VERSION="10.11" Puppet-Agent.install
 
 
 # Install the mas binary from homebrew
-/usr/local/bin/brew tap argon/mas
-
-/usr/local/bin/brew install mas
+# /usr/local/bin/brew tap argon/mas
+#
+# /usr/local/bin/brew install mas
 
 get_mas() {
     local app_id=$1
