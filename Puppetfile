@@ -52,6 +52,9 @@ mod 'home_docker',
 mod 'yubikey_ssh',
     :git => 'https://github.com/grahamgilbert/puppet-yubikey_ssh.git'
 
+mod 'mas',
+    :git => 'https://github.com/binford2k/binford2k-mas.git'
+
 mod 'garethr/docker', '5.0.0'
 
 mod 'puppetlabs/apt', '2.2.1'
