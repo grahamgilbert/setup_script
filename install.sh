@@ -5,8 +5,8 @@
 appstoreusername=$1
 appstorepassword=$2
 # Install homebrew
-# echo "Please enter your password to install Homebrew"
-# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
+echo "Please enter your password to install Homebrew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
 
 AUTOPKG=/usr/local/bin/autopkg
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
