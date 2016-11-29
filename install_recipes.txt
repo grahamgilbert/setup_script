@@ -2,7 +2,7 @@
 Dropbox.install
 Autopkg-Release.install
 outset.install
-Alfred2.install
+Alfred3.install
 osquery.install
 Caffeine.install
 dockutil.install
@@ -14,6 +14,7 @@ LingonX.install
 Mactracker.install
 MalwarebytesAntiMalware.install
 Pacifist.install
+Mailplane3.install.recipe
 Slack.install
 Transmit.install
 Transmission.install
