@@ -48,7 +48,7 @@ AUTOPKG_DIR=$(mktemp -d /tmp/autopkg-XXXX)
 # }
 
 AUTOPKG_PKG=${AUTOPKG_DIR}/AutoPkg.pkg
-curl -o ${AUTOPKG_PKG} -L https://github.com/autopkg/autopkg/releases/download/v0.6.1/autopkg-0.6.1.pkg
+curl -o ${AUTOPKG_PKG} -L https://github.com/autopkg/autopkg/releases/download/v1.0.3/autopkg-1.0.3.pkg
 installer -pkg "${AUTOPKG_PKG}" -tgt /
 
 # AUTOPKG="/usr/local/bin/autopkg"
