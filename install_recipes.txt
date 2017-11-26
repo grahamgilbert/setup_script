@@ -1,4 +1,6 @@
 1Password.install
+iTerm2.install
+SublimeText3.install
 Dropbox.install
 Autopkg-Release.install
 outset.install
@@ -7,14 +9,11 @@ osquery.install
 Caffeine.install
 dockutil.install
 Evernote.install
-Fluid.install
-Flux.install
 Kaleidoscope.install
 LingonX.install
 Mactracker.install
 MalwarebytesAntiMalware.install
 Pacifist.install
-Mailplane3.install.recipe
 Slack.install
 Transmit.install
 Transmission.install
@@ -29,7 +28,6 @@ GoogleChrome.install
 GoogleVoiceAndVideo.install
 GrandPerspective.install
 Handbrake.install
-iTerm2.install
 iStatMenus.install
 LaunchControl.install
 MunkiAdmin.install
